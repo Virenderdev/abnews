@@ -38,7 +38,7 @@ const EventHire = () => {
     <p className='text-white mt-4'>Looking for a bar to host your drinks in Waterloo or an area for an event in Southwark? We can help.</p>
     <p className='text-white mt-3'>We’re pretty flexible here at Jacks, let us know what you are after, and we’ll make it happen. We’ve got a number of spaces to drink and dine, with some available to book for private hire.</p>
     <p className='text-white'>Scroll down to take a look at our spaces.</p>
-    <div className="d-flex justify-content-between">
+    <div className="d-flex justify-content-around">
   <Button variant="outline-primary" className="mt-5 text-white" style={{ borderColor: '#fff' }}>OUR SPACES</Button>
   <Button variant="outline-primary" className="mt-5 text-white" style={{ borderColor: '#fff' }}>BOOK NOW</Button>
 </div>

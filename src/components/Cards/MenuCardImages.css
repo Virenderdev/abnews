@@ -1,0 +1,9 @@
+.zoom-image {
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .zoom-image:hover {
+    transform: scale(1.2);
+  }
+  
