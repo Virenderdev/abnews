@@ -15,9 +15,9 @@ const MenuCardsImages = () => {
 
   return (
     <>
-      <Row className='my-2'>
+      <Row className='my-2 mx-auto'>
         {cardImages?.map((card, index) => (
-          <Col key={index} md={3} p={1} style={{ padding: '5px' }}>
+          <Col key={index} md={3}  style={{ padding: '5px' }}>
             <Card className='bg-transparent text-white zoom-image'>
               <Card.Img src={card} alt='Card' className='image-card img-fluid' style={{ height: '300px' }} />
             </Card>

@@ -5,14 +5,15 @@ import HeroImg from '../../components/HeroImg';
 import About from '../About/About';
 import Menu from '../Menu/Menu';
 import Footer from '../../components/Footer/Footer';
-import Carousele from '../../components/Carousele';
+// import Carousele from '../../components/Carousele';
 
 const Home = () => {
   return (
     <div>
+     
       <CustomNavbar />
-      {/* <HeroImg /> */}
-      <Carousele/>
+      <HeroImg />
+      {/* <Carousele/> */}
       <Container fluid>
         <Container>
      
@@ -21,6 +22,7 @@ const Home = () => {
       </Container>
       <Menu/>
       <Footer/>
+      
     </div>
   );
 };

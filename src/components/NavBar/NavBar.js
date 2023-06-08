@@ -5,7 +5,7 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const CustomNavbar = () => {
   const [click, setClick] = useState(false);
   const [color, setColor] = useState(false);
 
@@ -71,7 +71,7 @@ const Navbar = () => {
           <Link to="/events">EVENTS & PRIVATE HIRE</Link>
         </li>
         <li>
-          <Link to="/contact">ALL LOCATIONS</Link>
+          <Link to="/contact">CONTACT US</Link>
         </li>
         <li>
           <Link to="/delivery">DELIVERY</Link>
@@ -88,4 +88,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default CustomNavbar;

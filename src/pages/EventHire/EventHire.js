@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import CustomNavbar from "../../components/NavBar/NavBar"
 import eventheader from '../../Images/eventbackground.webp'
 import Footer from '../../components/Footer/Footer'
@@ -11,13 +11,21 @@ import magnetic from "../../Images/magneticwall.webp";
 import eventcard1 from "../../Images/eventcard1.webp"
 import eventcard2 from "../../Images/eventcard2.webp"
 import eventcard3 from "../../Images/eventcard3.webp"
+
 import "./EventHire.css"
 const EventHire = () => {
+  const rowRef = useRef(null);
+  const handleScroll = () => {
+    rowRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+
+  
   return (
     <>
     <CustomNavbar />
     <div className="hero">
-    <div className='mask'
+    <div className='dark'
     style={{
       backgroundImage: `url(${eventheader})`,
       backgroundSize: 'cover',
@@ -33,33 +41,38 @@ const EventHire = () => {
   ></div>
     <div className='content'>
   <Row>
-  <Col md={5} className="mx-auto text-start">
-    <h2 className='text-white text-center fw-bold'>EVENTS & PRIVATE HIRE</h2>
-    <p className='text-white mt-4'>Looking for a bar to host your drinks in Waterloo or an area for an event in Southwark? We can help.</p>
-    <p className='text-white mt-3'>We’re pretty flexible here at Jacks, let us know what you are after, and we’ll make it happen. We’ve got a number of spaces to drink and dine, with some available to book for private hire.</p>
-    <p className='text-white'>Scroll down to take a look at our spaces.</p>
-    <div className="d-flex justify-content-around">
-  <Button variant="outline-primary" className="mt-5 text-white" style={{ borderColor: '#fff' }}>OUR SPACES</Button>
-  <Button variant="outline-primary" className="mt-5 text-white" style={{ borderColor: '#fff' }}>BOOK NOW</Button>
-</div>
-  </Col>
+  <Col md={5} className="mx-auto text-center text-md-start">
+  <h2 className='text-white fw-bold text-center'>EVENTS & PRIVATE HIRE</h2>
+  <p className='text-white mt-4'>Looking for a bar to host your drinks in Waterloo or an area for an event in Southwark? We can help.</p>
+  <p className='text-white mt-3'>We’re pretty flexible here at Jacks, let us know what you are after, and we’ll make it happen. We’ve got a number of spaces to drink and dine, with some available to book for private hire.</p>
+  <p className='text-white'>Scroll down to take a look at our spaces.</p>
+  <div className="d-flex justify-content-center justify-content-around mt-5">
+    <button className="white-button" onClick={handleScroll}>OUR SPACES</button>
+    <button className="white-button">BOOK NOW</button>
+  </div>
+</Col>
+
 </Row>
 </div>
   </div>
-  <Row className='py-3'>
-    <Col md={3}>
-      
-    <img src={event1} alt='card1'  className='img-fluid'/>
-  
-    </Col>
+  <Row className='py-3' ref={rowRef}>
+  <Col md={3}>
+  <Card className="text-center">
+    <Card.Img variant="top" src={event1} alt="card1" className="img-fluid" />
+    
+  </Card>
+</Col>
     <Col md={3}>
     <h2 className='text-center mt-5'>Outside</h2>
     <p className='text-center px-4 mt-5'>Our outdoor area is the cosy spot for an event on Waterloo. We've got a full cover and plenty of heaters for when things get cold.</p>
     </Col>
     <Col md={3}>
-    <img src={event2} alt='card1'  className='img-fluid'/>
+      <Card className='text-center'>
+    <Card.Img variant='top' src={event2} alt='card1'  className='img-fluid'/>
+    </Card>
     </Col>
     <Col md={3}>
+     
     <h2 className='text-center mt-5'>Back Room</h2>
     <p className='text-center px-4 mt-5'>Located towards to back of the bar, our back room offers a great setting for hosting events. The semi private space pays homage to the McElhinney family.</p>
     </Col>
@@ -68,14 +81,18 @@ const EventHire = () => {
     <p className='text-center px-4 mt-5'>We've got a number of standing and seated spaces nestled in our Southwark Bar.</p>
     </Col>
     <Col md={3}>
-    <img src={event3} alt='card1' className='img-fluid'/>
+    <Card className='text-center'>
+    <Card.Img variant='top' src={event3} alt='card1' className='img-fluid'/>
+    </Card>
     </Col>
     <Col md={3}>
     <h2 className='text-center mt-5'>Dining</h2>
     <p className='text-center px-4 mt-5'>Offering a tasty Thai menu we have dedicated spaces for both dinner and lunch in Waterloo.</p>
     </Col>
     <Col md={3}>
-    <img src={event4} alt='card1' className='img-fluid'/>
+      <Card className='text-center'>
+    <img variant ='top' src={event4} alt='card1' className='img-fluid'/>
+    </Card>
     </Col>
   </Row>
   <div
@@ -93,12 +110,12 @@ const EventHire = () => {
     }}
   >
    
-   <Col md={6} className="mx-auto text-start my-5 d-flex align-items-center">
-  <div className="text-center">
+   <Col md={6} className="mx-auto text-start my-5 d-flex align-items-center ">
+  <div className="text-center justify-content-center">
     <h1 className="text-white">Magnetic wall</h1>
-    <p className="text-white">Whether it's your birthday, a leaving do, a hen do, or a work related event, we've got you covered! Jack's Bar has 2 magnetic walls (inside and outside). So make your day even more special by adding a message and personalising your event!</p>
+    <p className="text-white mt-4  p-2">Whether it's your birthday, a leaving do, a hen do, or a work related event, we've got you covered! Jack's Bar has 2 magnetic walls (inside and outside). So make your day even more special by adding a message and personalising your event!</p>
     <div className="justify-content-center">
-      <Button variant="outline-primary" className="mt-5 text-white" style={{ borderColor: '#fff' }}>Email</Button>
+      <button  className="mt-5 white-button" onClick={sendEmail}>Email</button>
     </div>
   </div>
 </Col>

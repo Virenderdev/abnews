@@ -1,6 +1,13 @@
+import React,{useNavigate} from 'react-router-dom'
 import Whatson from "../../pages/Whats on/Whatson";
 
 const CardData = () => {
+  const navigate = useNavigate();
+  const handleOrderNow = () => {
+    
+    navigate('/delivery');
+  };
+
     const cards = [
       {
         // image: jacs,
@@ -14,7 +21,8 @@ const CardData = () => {
         title: ' DELIVERY',
         description1: 'Fancy a Thai dinner but cant make it to Jacks Bar, fear not.',
         description2: `We've got he best Thai Menu in Waterloo and we can deliver right to your doorstep.`,
-        buttonText: 'ORDER NOW'
+        buttonText: 'ORDER NOW',
+        handleClick: handleOrderNow
       },
       {
         // image: jacs3,

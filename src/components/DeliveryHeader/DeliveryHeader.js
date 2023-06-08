@@ -1,10 +1,14 @@
 import React,{useState} from 'react';
 import'./DeliveryHeader.css';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import {BsInfoCircle, BsSearch} from "react-icons/bs";
+import {BsFillBasketFill, BsInfoCircle, BsSearch} from "react-icons/bs";
 import {AiOutlineHeart, AiTwotoneStar} from "react-icons/ai";
 import {IoIosArrowForward} from "react-icons/io"
 import delivery from "../../Images/deliverybackground.webp"
+import image1 from "../../Images/crackers.webp";
+import springimage from "../../Images/springroll.webp"
+import corncake from '../../Images/corncake.jpeg';
+import {motion} from "framer-motion"
 const DeliveryHeader = () => {
 
     const [selectedButton, setSelectedButton] = useState(null);
@@ -12,19 +16,36 @@ const DeliveryHeader = () => {
     const handleButtonClick = (button) => {
       setSelectedButton(button);
     };
-
+    const handlelogin = (e) => {
+        //  e.preventDefault()
+  
+    
+    };
     const menu = [
         {
           name: 'Thai Snacks',
           items: [
-            { name: 'Item 1', description: 'Description 1', image: 'image1.jpg' },
-            { name: 'Item 2', description: 'Description 2', image: 'image2.jpg' },
+            { name: 'Prawn Crackers', 
+            description: 'A basket of crunchy thai style prawn crackers served with sweet chilli droppong souce', image: image1},
           ],
         },
         {
           name: 'Small Plates',
           items: [
-            { name: 'Item 3', description: 'Description 3', image: 'image3.jpg' },
+            { name: 'Spring Rolls', 
+            description: 'Six vegetable spring rolls served with sweet chilli dipping souce',
+             amount:'150', 
+             image: springimage
+            },
+            { name: 'Corn Cakes', 
+            description: 'Sweetcorn Thai cakes,with a sweet chilli..',
+            amount:'150',
+             image: corncake 
+            },
+            { name: 'Item 4', description: 'Description 4', image: 'image4.jpg' },
+            { name: 'Item 4', description: 'Description 4', image: 'image4.jpg' },
+            { name: 'Item 4', description: 'Description 4', image: 'image4.jpg' },
+            { name: 'Item 4', description: 'Description 4', image: 'image4.jpg' },
             { name: 'Item 4', description: 'Description 4', image: 'image4.jpg' },
           ],
         },
@@ -72,9 +93,7 @@ const DeliveryHeader = () => {
           },
       ];
 
-        const filteredItems = selectedButton
-        ? menu.find((item) => item.name === selectedButton)?.items || []
-        : [];
+       
   return (
     <>
     <div>
@@ -85,9 +104,7 @@ const DeliveryHeader = () => {
     <input type="search" placeholder="Search Jacks Thai Kitchen - Mumbai" />
   </div>
 </div>
-    <div className="end">
-      <Button variant="outline-primary">LOG IN</Button>
-    </div>
+ 
   </div>
   <hr/>
   <Container>
@@ -108,31 +125,43 @@ const DeliveryHeader = () => {
   <p>Closes at 21:45·£2.50 delivery·£7.00 minimum</p>
   <p>
   <span>
-  <Button variant="outline-primary" className='d-flex flex-column'>
+  <motion.div  className='box'
+  whileHover={{ scale: 1.1 }} 
+    transition={{ type: "spring",
+     stiffness: 400, 
+     damping: 10 }}>
+      <button className='d-flex flex-column map-button'>
     <span className='text-start'><BsInfoCircle /> Info</span>
-    {/* <span className="flex-grow-1"></span> */}
-    {/* <IoIosArrowForward /> */}
+     <span className="flex-grow-1"></span> 
+
+   <IoIosArrowForward />
   
 
   <span className="additional-text d-flex flex-column text-muted">
     Map, allergen, and hygiene rating
   </span>
-  </Button>
+  </button>
+  </motion.div>
 </span>
 </p>
 <p>
-  <span>
-  <Button variant="outline-primary" className='d-flex flex-column'>
-    <span className='text-start'><AiTwotoneStar />4.8 Excellent</span>
-    {/* <span className="flex-grow-1"></span> */}
-    {/* <IoIosArrowForward /> */}
+<motion.div className='box'
+     whileHover={{scale:1.1}}
+     transition={{type: "spring",
+      stiffness: 400,
+    damping: 10}}
+    >
+  <button className='d-flex flex-column map-button'>
   
+    <span className='text-start'><AiTwotoneStar />4.8 Excellent</span>
+     
 
   <span className="additional-text d-flex flex-column text-muted">
     See all 500 reviews
   </span>
-  </Button>
-</span>
+
+  </button>
+  </motion.div>
 </p>
 </Col>
  
@@ -141,9 +170,9 @@ const DeliveryHeader = () => {
   <hr/>
   <Row>
   <Col md={12}>
-    <div className="d-flex flex-row justify-content-center">
+    <div className="d-flex flex-row justify-content-center menu-container sticky">
       {menu.map((button, index) => (
-        <Button key={index} onClick={() => handleButtonClick(button.name)}  className={selectedButton === button.name ? 'active' : ''}style={{ width: 'auto', height: '30px', margin: '0 5px',color:"#00CCBC" }} className='bg-transparent border-0 border-rounded'>
+        <Button key={index}  className={selectedButton === button.name ? 'active' : ''}style={{ width: 'auto', height: '30px', margin: '0 5px',color:"#00CCBC" }}    className='bg-transparent border-0 border-rounded'>
           {button.name}
         </Button>
       ))}
@@ -152,26 +181,67 @@ const DeliveryHeader = () => {
 </Row>
 
 
-
+<hr/>
     </div>
-    <div>
-    <Row>
-        <Col md={3}>
-        <div className="d-flex flex-wrap">
-        {filteredItems.map((item, index) => (
-          <div key={index} className="card d-flex">
-            <div className="card-body">
-              <h5 className="card-title">{item.name}</h5>
-              <p className="card-text">{item.description}</p>
-            </div>
-            <img src={item.image} alt={item.name} className="card-img-top" />
-          </div>
 
-        ))}
+      {/* Display filtered items */}
+      <div className="filtered-items">
+        <Container>
+          <Row>
+        
+
+            {/* Display all filtered items */}
+            <Col md={8} >
+              <div className="filtered-items-container">
+              {menu.map((item, index) => (
+  <div key={index}>
+    <h4 className="card-title mb-3">{item.name}</h4>
+    <div className="card-container d-flex flex-wrap">
+      {item.items.map((menuItem, menuIndex) => (
+        <div className="card d-flex" key={menuIndex}>
+          <div className="card-body d-flex flex-row">
+            <div className="text-container col-md-8">
+              <span className="card-text mb-0">{menuItem.description}</span>
+              <p className="card-text text-muted">{menuItem.amount}</p>
+            </div>
+            <img src={menuItem.image} alt={menuItem.name} className="card-img-top" />
+          </div>
         </div>
-        </Col>
-    </Row>
+      ))}
+    </div>
+  </div>
+))}
+
+
+              </div>
+            </Col>
+                {/* Sticky second card */}
+                <Col md={4} className="sticky-card">
+              <Card>
+              <div className='card-body checkout'>
+                <div className='text-center'>
+               <BsFillBasketFill style={{width:"30px",height:"30px"}}/>
+               <p className='fs-4' style={{color:'#abadad'}}>Your basket is empty</p>
+              
+               </div>
+               <div className="d-flex justify-content-center mt-4">
+  <button type="button" className="checkout-button" disabled>
+    Go To Checkout
+  </button>
+</div>
+              </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </div>
+    
+  
+
+
+
+     
+      
       </>
   )
 }

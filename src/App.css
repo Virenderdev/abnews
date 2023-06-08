@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +27,23 @@
 
 .App-link {
   color: #61dafb;
+}
+.white-button {
+  border: 3px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 7px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  width: auto;
+  height: 2.4rem;
+ font-weight: bold;
+}
+.white-button:hover {
+  border: none;
+  transition: border 0.3s ease-in;
 }
 
 @keyframes App-logo-spin {

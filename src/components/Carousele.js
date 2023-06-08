@@ -75,7 +75,7 @@ const Carousele = () => {
               textAlign: "center",
               maxWidth: "100.87rem",
               maxHeight: "45rem",
-              // margin: "60px auto",
+              
             }}
           />
     </div>

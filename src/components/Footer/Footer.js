@@ -5,8 +5,8 @@ import "./Footer.css"
 const Footer = () => {
   return (
 
-        <section className=''>
-            <Container className='text-center text-md-start mt-5'>
+        <section className='footer'>
+            <Container className='text-md-start mt-5'>
                 <Row>
                     <Col md={3}>
                     <h2 className='fs-3'>LOCATIONS</h2>

@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom';
 import Homeheader from '../Images/Homeheader.jpg';
 import jacksImage from '../Images/Jacks_white_logo.webp';
 import deliveryIcon from "../Images/deliveroo-logo-brand-food-deliver.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTriangle } from '@fortawesome/free-regular-svg-icons';
 
+import "./HeroImgStyles.css"
 const HeroImg = () => {
   return (
     <div
@@ -26,63 +29,62 @@ const HeroImg = () => {
     >
       <Container>
         <Row>
-        <Col md={3} className="d-flex justify-content-center  mt-5">
-            <div
-              id="sr-res-root"
-              className="sr-lg sr-light sr-#41414a"
-              style={{
-                cursor: 'pointer',
-                borderRadius: '3px',
-                textAlign: 'center',
-                boxSizing: 'border-box',
-                lineHeight: '15px',
-                overflow: 'hidden',
-                backgroundColor: 'white',
-                color: 'rgb(65, 65, 74)',
-                border: '1px solid rgb(65, 65, 74)',
-                fontWeight: 400,
-                padding: '14px 0px 17px 10px',
-                width: '178px',
-                fontSize: '18px',
-                height: '45px',
-              }}
-            >
-              <i
-                className="sr-fa sr-fa-logo"
-                style={{
-                  display: 'block',
-                  float: 'left',
-                  fontSize: '21px',
-                  margin: '-3px 0px 0px 2px',
-                }}
-              ></i>
-              <span
-                style={{
-                  display: 'inline-block',
-                  marginRight: '7px',
-                  maxWidth: '130px',
-                  fontFamily: 'Roboto',
-                  fontStyle: 'normal',
-                  letterSpacing: '0px',
-                }}
-              >
-                BOOK NOW
-              </span>
-            </div>
-          </Col>
-          <Col md={12} className="d-flex justify-content-center">
-            <img src={jacksImage} alt="jacsImage" />
+        <Col md={3} className="d-flex justify-content-center ms-2">
+  <div
+    id="sr-res-root"
+    className="sr-lg sr-light sr-#41414a"
+    style={{
+      cursor: 'pointer',
+      borderRadius: '3px',
+      textAlign: 'center',
+      boxSizing: 'border-box',
+      lineHeight: '15px',
+      overflow: 'hidden',
+      backgroundColor: 'white',
+      color: 'rgb(65, 65, 74)',
+      border: '1px solid rgb(65, 65, 74)',
+      fontWeight: 400,
+      padding: '14px 0px 17px 10px',
+      width: '178px',
+      fontSize: '18px',
+      height: '45px',
+      position: 'relative',
+    }}
+  >
+    <span
+      style={{
+        position: 'absolute',
+        top: '50%',
+        // right: '30px',
+        left: 0,
+        transform: 'translateY(-50%)',
+        width: '25px',
+        height: '20px',
+        borderTop: '10px solid transparent',
+        borderBottom: '10px solid transparent',
+        borderRight: '10px solid black',
+      }}
+    ></span>
+    <span>BOOK NOW</span>
+  </div>
+</Col>
+
+
+          </Row>
+          <Row>
+          <Col md={12} className="d-flex justify-content-center mb-5">
+            <img src={jacksImage} alt="jacsImage"  className='jacsimage'/>
           </Col>
         </Row>
         <Row>
-        <Col md={12} className="d-flex justify-content-center align-items-center" style={{ marginTop: "9rem" }}>
-  <div className="d-flex align-items-center justify-content-center" style={{ flex: 1 }}>
+        <Col md={12} className="d-flex icons " >
+  <div className="d-flex align-items-end justify-content-center" style={{ flex: 1 }}>
     <BsFacebook style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} />
     <AiFillTwitterCircle style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} />
     <RiInstagramFill style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} />
   </div>
-  <div className="d-flex justify-content-end">
-    <img src={deliveryIcon} alt="deliveryIcon" style={{ width: "6rem", height: "6rem" }} />
+  <div className="">
+    <img src={deliveryIcon} alt="deliveryIcon" style={{ width: "6rem", height: "6rem" }} className='delivery-icon' />
   </div>
 </Col>
 
