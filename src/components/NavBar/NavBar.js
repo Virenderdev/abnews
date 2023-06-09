@@ -56,12 +56,12 @@ const CustomNavbar = () => {
         </li>
         <li>
           <ScrollLink to="about" smooth={true} duration={500}>
-            <Link to="/about">ABOUT</Link>
+            ABOUT
           </ScrollLink>
         </li>
         <li>
           <ScrollLink to="menu" smooth={true} duration={500}>
-            <Link to="/">MENU</Link>
+           MENU
           </ScrollLink>
         </li>
         <li>

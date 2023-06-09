@@ -38,7 +38,7 @@ const Footer = () => {
                     <Col>
                     <h3 className='text-center'>
                       Copyrights reserved by 2023 @
-                      <a href="https://www.digitalshakha.in/" class="footer-links" target="_blank">digitalshakha</a>
+                      <a href="https://www.digitalshakha.in/" className="footer-links" target="_blank">digitalshakha</a>
                     </h3>
                     </Col>
                 </Row>

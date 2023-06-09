@@ -7,7 +7,10 @@ const CardData = () => {
     
     navigate('/delivery');
   };
+    const handleLunch = () => {
 
+     navigate("/dinnermenu")
+    };
     const cards = [
       {
         // image: jacs,
@@ -29,7 +32,8 @@ const CardData = () => {
         title: 'LUNCH OFFER',
         description1: 'Our authentic Thai food "Johnny Rice" is served MON - FRI  lunch.',
         description2: 'Grab your Takeaway boxes, order your drinks and plot up at a table in our to enjoy your afternoon.',
-        buttonText: 'DAILY MENU'
+        buttonText: 'DAILY MENU',
+        handleClick: handleLunch
       },
     
     ];

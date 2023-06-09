@@ -115,7 +115,7 @@ const EventHire = () => {
     <h1 className="text-white">Magnetic wall</h1>
     <p className="text-white mt-4  p-2">Whether it's your birthday, a leaving do, a hen do, or a work related event, we've got you covered! Jack's Bar has 2 magnetic walls (inside and outside). So make your day even more special by adding a message and personalising your event!</p>
     <div className="justify-content-center">
-      <button  className="mt-5 white-button" onClick={sendEmail}>Email</button>
+      <button  className="mt-5 white-button">Email</button>
     </div>
   </div>
 </Col>

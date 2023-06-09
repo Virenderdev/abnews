@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { RiInstagramFill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Homeheader from '../Images/Homeheader.jpg';
 import jacksImage from '../Images/Jacks_white_logo.webp';
 import deliveryIcon from "../Images/deliveroo-logo-brand-food-deliver.png";
@@ -12,6 +12,10 @@ import { faTriangle } from '@fortawesome/free-regular-svg-icons';
 
 import "./HeroImgStyles.css"
 const HeroImg = () => {
+  const navigate = useNavigate()
+  const handleBooking =()=>{
+    navigate('/booking')
+  }
   return (
     <div
       className="hero"
@@ -50,6 +54,7 @@ const HeroImg = () => {
       height: '45px',
       position: 'relative',
     }}
+    onClick={handleBooking}
   >
     <span
       style={{

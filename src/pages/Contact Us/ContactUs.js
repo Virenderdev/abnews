@@ -1,26 +1,25 @@
 import React, { useRef } from 'react';
 import "./ContactUs.css"
 import contactimage from "../../Images/contactimage.webp"
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import CustomNavbar from '../../components/NavBar/NavBar';
 import foodPic from "../../Images/foodPic.webp"
 import Footer from '../../components/Footer/Footer';
-import MapContainer from './MapContainer';
 import emailjs from 'emailjs-com';
 const ContactUs = () => {
     const form = useRef();
-    const sendEmail = (e) => {
-        // e.preventDefault();
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
       
-        emailjs.sendForm('service_ovjzn8q', 'template_a2n5p0j', e.target, 'EbhDO87gC1f14SXqC')
-          .then((result) => {
-            console.log(result.text);
-          }, (error) => {
-            console.log(error.text);
-          });
+    //     emailjs.sendForm('service_ovjzn8q', 'template_a2n5p0j', e.target, 'EbhDO87gC1f14SXqC')
+    //       .then((result) => {
+    //         console.log(result.text);
+    //       }, (error) => {
+    //         console.log(error.text);
+    //       });
       
-        e.target.reset();
-      };
+    //     e.target.reset();
+    //   };
   return (
     <>
         <CustomNavbar />
@@ -54,43 +53,58 @@ const ContactUs = () => {
     </div>
   
   </div>
-  <Row className='my-4'>
-        <Col md={12} >
-  <MapContainer/>
-  </Col>
+
+  <Row className='my-2'>
+    <Col md={12}>
+      <div className="map-container-wrapper">
+        <div>
+          <h2 className='text-center mb-4'>Find Us On Google</h2>
+        </div>
+      <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.3333937230514!2d72.8358561723032!3d18.96087801519336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce3b2647412f%3A0x5dbc27d8521ad30f!2z4LC54LGL4LCf4LCy4LGNIOCwnOCwvuCwruCxjSDgsJzgsL7gsK7gsY0g4LCq4LGN4LCv4LC-4LCy4LC44LGN!5e0!3m2!1ste!2sin!4v1686267990722!5m2!1ste!2sin"
+  width="100%"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+>
+</iframe>
+
+      </div>
+    </Col>
   </Row>
-  
         <Row className='justify-content-center justify-content-md-start my-5'>
-        <Col md={6} xs={12} className="position-relative">
+        <Col md={6} xs={12}>
  
 </Col> 
 
 <Col md={6}  className="">
       <div className="form-container" >
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" />
+        <form action='https://formspree.io/f/mbjevbyv' method='Post'>
+          <div className="form-group my-3 px-3">
+           
+            <input type="text" id="name" placeholder='username' name="name"  autoComplete='off' required/>
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" />
+          <div className="form-group my-3 px-3">
+            <input type="email" id="email" name="email" placeholder='example@gmail.com' autoComplete='off' required/>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" />
+          
+          <div className="form-group my-3 px-3">
+            <textarea id="message" name="message" autoComplete='off' required></textarea>
           </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
+          <div className='text-center my-3'>
+          <button type="submit " value="Send" className='text-center custom-button'>Submit</button>
           </div>
-          <button type="submit" value="Send">Submit</button>
         </form>
       </div>
       </Col>
       </Row>
+     
+  
+
     {/* </div> */}
-    <Footer/>
+ <Footer/>
    </>
   );
 };

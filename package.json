@@ -20,6 +20,7 @@
     "react-bootstrap": "^2.7.4",
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^18.2.0",
+    "react-google-maps": "^9.4.5",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",

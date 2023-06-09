@@ -9,7 +9,7 @@ const WhatsonheaderCard = ({ cards }) => {
       <Row className='mt-5'>
         {cards.map((card, index) => (
           <Col key={index} md={4} p={1}  style={{ padding: '5px' }}>
-            <Card className='bg-transparent text-white  text-center mt-5 mb-5 h-100'>
+            <Card className='bg-transparent text-white  text-center mt-5 mb-5 h-100 border-0'>
               <Card.Body>
                 <Card.Title className="fw-bold fs-2 text-center">{card.title}</Card.Title>
                 <Card.Text className='text-start mt-5'>{card.description1}</Card.Text>

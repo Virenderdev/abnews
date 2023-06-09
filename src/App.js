@@ -10,6 +10,7 @@ import Menu from './pages/Menu/Menu';
 import Delivery from './pages/Delivery/Delivery';
 import ContactUs from './pages/Contact Us/ContactUs';
 import DinnerMenu from './components/Menus/DinnerMenu';
+import Booking from './components/Booking/Booking';
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Route path='/contact' element={<ContactUs/>}/>
       <Route path='/delivery' element={<Delivery/>}/>
       <Route path='/dinnermenu' element={<DinnerMenu/>}/>
+      <Route path='/booking' element={<Booking/>}/>
       
 
      </Routes>
