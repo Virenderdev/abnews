@@ -1,43 +1,59 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./ContactUs.css"
 import contactimage from "../../Images/contactimage.webp"
 import { Col, Container, Row } from 'react-bootstrap';
 import CustomNavbar from '../../components/NavBar/NavBar';
 import foodPic from "../../Images/foodPic.webp"
 import Footer from '../../components/Footer/Footer';
-import emailjs from 'emailjs-com';
+import InlineError from './InlineError';
+import {validateEmail, validateFUllName, validateMessage} from "./Validation"
+import { contactConfig } from '../../components/Data';
+import axios from "axios";
 const ContactUs = () => {
-    const form = useRef();
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
-      
-    //     emailjs.sendForm('service_ovjzn8q', 'template_a2n5p0j', e.target, 'EbhDO87gC1f14SXqC')
-    //       .then((result) => {
-    //         console.log(result.text);
-    //       }, (error) => {
-    //         console.log(error.text);
-    //       });
-      
-    //     e.target.reset();
-    //   };
+    const [fullName, setFullName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+    const [fullNameError, setFullNameError] = useState()
+    const [emailError, setEmailError] = useState()
+    const [messageError, setMessageError] = useState()
+    const [isEmailSent, setIsEmailSent] = useState(false)
+
+
+     const handleSubmit = () =>{
+       axios.post("http://localhost:3001/api/sendMessage",{fullName,email,message})
+       .then((res)=>console.log(res.data.data))
+       .catch(error=>console.log(error.response.data.message))
+     }
+  
   return (
     <>
         <CustomNavbar />
 <div className="hero">
- 
-    <div
-      className="img-fluid"
-      style={{
-        backgroundImage: `url(${foodPic})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        width: '100%',
-        height: '90vh',
-       
+   
+   
     
-      }}
-    >
-        
+<div
+  className="img-fluid"
+  style={{
+    backgroundImage: `url(${foodPic})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    width: '100%',
+    height: '90vh',
+    position: 'relative', // Add relative positioning to the container
+  }}
+>
+  <div
+    className="dark-overlay"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the opacity as needed
+    }}
+  ></div>
    <Row >
     <Col md={5} className='content-main' >
       <h1 className='text-center text-white fw-bold'>AUTHENTIC THAI FOOD MADE IN INDIA</h1>
@@ -54,7 +70,65 @@ const ContactUs = () => {
   
   </div>
 
-  <Row className='my-2'>
+ 
+      <Container>
+        <Row className=' mt-3 mb-5'>
+        <Col lg={8}>
+         <h1 className='display-4 mb-4 bold'>Contact Us</h1>
+</Col> 
+</Row>
+<Row className='sec_sp'>
+  <Col lg={5} className='mb-5'>
+    <h3 className='color_sec py-4'>Get in Touch</h3>
+    <address>
+      <strong>Email: jacksfood@gmail.com</strong>
+      <br/>
+      <br/>
+      <p>
+        <strong>Phone: +62 *** ***</strong>
+      </p>
+    </address>
+    <p>{contactConfig.description}</p>
+  </Col>
+
+<Col lg={7} >
+      <div className="form-container" >
+        <form  className='contact_form w-100' onSubmit={handleSubmit}>
+          <Row>
+            <Col lg={6} className='form-group'>
+            <input className='form-control rounded-0' type="text" id="name" placeholder='username' value={fullName} onChange={(e)=> setFullName(e.target.value)} autoComplete='off' required/>
+                 {fullNameError && <InlineError error={fullNameError}/>}
+            </Col >
+            <Col lg={6} className="form-group">
+            <input className='form-control rounded-0' type="email" id="email" value={email}   onChange={(e)=>setEmail(e.target.value)}placeholder='example@gmail.com' autoComplete='off' required/>
+
+            </Col>
+          </Row>
+           
+        
+       
+        
+          
+          
+            <textarea className="form-control rounded-0" id="message" value={message} onChange={(e)=>setMessage(e.target.value)} autoComplete='off' required placeholder='message here...' rows={6}></textarea>
+         
+         <br/>
+         <Row>
+          <Col lg={12} className='form-group'>
+            {isEmailSent ? (
+              <p>Thank you for your message. We will get back to you soon.</p>
+            ) : (
+          <button type="submit "  value="Send" className='text-center custom-button'>Submit</button>
+ ) }
+          </Col>
+         </Row>
+         
+        </form>
+      </div>
+      </Col>
+      </Row>
+      </Container>
+      <Row className='my-2'>
     <Col md={12}>
       <div className="map-container-wrapper">
         <div>
@@ -73,35 +147,7 @@ const ContactUs = () => {
 
       </div>
     </Col>
-  </Row>
-        <Row className='justify-content-center justify-content-md-start my-5'>
-        <Col md={6} xs={12}>
- 
-</Col> 
-
-<Col md={6}  className="">
-      <div className="form-container" >
-        <form action='https://formspree.io/f/mbjevbyv' method='Post'>
-          <div className="form-group my-3 px-3">
-           
-            <input type="text" id="name" placeholder='username' name="name"  autoComplete='off' required/>
-          </div>
-          <div className="form-group my-3 px-3">
-            <input type="email" id="email" name="email" placeholder='example@gmail.com' autoComplete='off' required/>
-          </div>
-          
-          <div className="form-group my-3 px-3">
-            <textarea id="message" name="message" autoComplete='off' required></textarea>
-          </div>
-          <div className='text-center my-3'>
-          <button type="submit " value="Send" className='text-center custom-button'>Submit</button>
-          </div>
-        </form>
-      </div>
-      </Col>
-      </Row>
-     
-  
+  </Row >
 
     {/* </div> */}
  <Footer/>

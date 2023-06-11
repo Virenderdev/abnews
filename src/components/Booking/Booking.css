@@ -1,0 +1,41 @@
+.booking_back {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking_card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.booking_search_button{
+    background-color: rgb(50,70,84);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    height: 42px;
+    width: 100%;
+    color: rgb(255,255,255);
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+
+
+.slider{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.datepicker_container{
+    display: flex;
+    justify-content: center;
+}

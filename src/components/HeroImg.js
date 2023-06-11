@@ -84,9 +84,9 @@ const HeroImg = () => {
         <Row>
         <Col md={12} className="d-flex icons " >
   <div className="d-flex align-items-end justify-content-center" style={{ flex: 1 }}>
-    <BsFacebook style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} />
-    <AiFillTwitterCircle style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} />
-    <RiInstagramFill style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} />
+  <Link to="https://www.facebook.com/" target='_blank'><BsFacebook style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} /></Link>
+  <Link to="https://twitter.com/" target='_blank'> <AiFillTwitterCircle style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} /></Link>
+  <Link to='https://www.linkedin.com/feed/' target='_blank'><RiInstagramFill style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} /></Link>
   </div>
   <div className="">
     <img src={deliveryIcon} alt="deliveryIcon" style={{ width: "6rem", height: "6rem" }} className='delivery-icon' />

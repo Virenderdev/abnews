@@ -4,6 +4,7 @@ import foodPic from "../../Images/foodPic.webp"
 import additionalImage from "../../Images/jOHNNY rICE WHITE.webp"
 import "./custom.css"
 import { Col, Row } from 'react-bootstrap';
+import Footer from '../Footer/Footer';
 const DinnerMenu = () => {
   return (
     <>
@@ -34,6 +35,7 @@ const DinnerMenu = () => {
       <p>So if you are looking for a Thai dining experience in South London then head into one of our venues</p>
     </Col>
    </Row>
+
     </div>
   </div>
   <div className="food_menu ">
@@ -42,15 +44,56 @@ const DinnerMenu = () => {
         <h5>Add Curry Sauce £1.5</h5>
         <h4>Mixed Platter £9/pp <span className='text-small'>(MIN. 2 PEOPLE)</span></h4>
         <p>Spicy chicken bits, prawn toast, spring rolls, chicken satay, corn cakes & prawn crackers</p>
-        <Row>
-          <Col md={6}>
+        <Row className='py-4'>
+  <Col md={6}>
+    <div className='menu-item'>
+      <h4>Khow Kiep £3.50</h4>
+      <p>A basket of crunchy thai style prawn crackers seved with sweet chilli dipping sauce</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Por Pia Pak £6.5</h4>
+      <p>Mixed vegetable spring rolls with a sweet chilli sauce</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Sesame Chicken Wings £6.90</h4>
+      <p>Six sticky sweet, sour & spicy sesame seed covered chicken wings</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Chiang Mai Chicken £6.90</h4>
+      <p>Strips of traditionally marinated chicken breast served with sweet chilli dipping sauce</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Khanom Jeeb £7</h4>
+      <p>Pork Thai dumplings served with thick dim sum sauce</p>
+    </div>
+  </Col>
+  <Col md={6}>
+    <div className='menu-item'>
+      <h4>Chiang Mai Chicken £6.90</h4>
+      <p>Strips of traditionally marinated chicken breast served with sweet chilli dipping sauce</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Khanom Pang Na Goong £7</h4>
+      <p>Crunchy sesame toast filled with fresh prawn and Thai seasoning</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Calamari £7.5</h4>
+      <p>Deep fried squid served with sriracha chilli dipping sauce</p>
+    </div>     
+    <div className='menu-item'>
+      <h4>Gai Satay £6.90</h4>
+      <p>Marinated chicken breast skewers with a delicious peanut delicious peanut sauce</p>
+    </div>
+    <div className='menu-item'>
+      <h4>Gai Satay £6.90</h4>
+      <p>Marinated chicken breast skewers with a delicious peanut sauce</p>
+    </div>
+  </Col>
+</Row>
 
-          </Col>
-          
-        </Row>
       </div>
     </div>
-  
+     <Footer/>
     </>
   )
 }

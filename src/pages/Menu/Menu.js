@@ -12,6 +12,20 @@ const Menu = () => {
   const handleDinner =() =>{
    navigate('/dinnermenu')
   }
+
+  const handleBooking = () =>{
+    navigate('/booking')
+  }
+  const handleMail = () => {
+    const recipient = 'virender.digitalshakha@gmail.com';
+    const subject = 'Private Hire Inquiry';
+    const body = 'Hello, I would like to inquire about private hire.';
+    
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+  
+  
   return (
  <>
       <Row id="menu" className="my-2 justify-content-center justify-content-md-start">
@@ -42,8 +56,8 @@ const Menu = () => {
           <p className='fs-5'>Check out our Instagram and Twitter to keep up to date with the daily menu. </p>
            <div className="d-flex flex-wrap justify-content-between">
           <button className="mt-3  custom-button btn-sm " onClick={handleDinner}>DINNER</button>
-<button className="mt-3   custom-button btn-sm">DRINKS</button>
-<button className="mt-3 custom-button btn-sm">COCKTAIL</button>
+<button className="mt-3   custom-button btn-sm"  onClick={handleDinner}>DRINKS</button>
+<button className="mt-3 custom-button btn-sm"  onClick={handleDinner}>COCKTAIL</button>
 </div>
           <p className='mt-5 mb-0'>JACKS KITCHEN:</p>
           <p className='m-0'>MON - FRI 12PM - 14:30PM // 5PM - 10PM</p>
@@ -67,9 +81,9 @@ const Menu = () => {
   padding: "10px"
 }}>
           <h1 className='text-white fw-bold'>BOOK AN AREA</h1>
-          <button className="mt-3 text-white me-4 white-button" style={{  borderColor: '#fff' }}>MAKE A BOOKING</button>
+          <button className="mt-3 text-white me-4 white-button" style={{  borderColor: '#fff' }} onClick={handleBooking}>MAKE A BOOKING</button>
           <h1  className='text-white fw-bold mt-4'>HIRE THE WHOLE BAR?</h1>
-          <button  className="mt-3 text-white me-4 white-button" >PRIVATE-HIRE-INQUIRY</button>
+          <button  className="mt-3 text-white me-4 white-button" onClick={handleMail}>PRIVATE-HIRE-INQUIRY</button>
          </div>
         </Col>
       </Row>

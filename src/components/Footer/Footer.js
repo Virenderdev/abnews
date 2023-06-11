@@ -1,8 +1,10 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
-import "./Footer.css"
-
+import "./Footer.css";
+import { useLocation } from 'react-router-dom';
 const Footer = () => {
+  const location = useLocation().pathname;
+
   return (
 
         <section className='footer'>
@@ -34,14 +36,17 @@ const Footer = () => {
                     </Col>
                 </Row>
                 <hr/>
-                <Row>
-                    <Col>
-                    <h3 className='text-center'>
-                      Copyrights reserved by 2023 @
-                      <a href="https://www.digitalshakha.in/" className="footer-links" target="_blank">digitalshakha</a>
-                    </h3>
-                    </Col>
-                </Row>
+                {location !== "/delivery" && (
+        <Row>
+          <Col>
+            <h3 className='text-center'>
+              Copyrights reserved by 2023 @
+              <a href="https://www.digitalshakha.in/" className="footer-links" target="_blank">digitalshakha</a>
+            </h3>
+          </Col>
+        </Row>
+      )}
+
             </Container>
         </section>
       

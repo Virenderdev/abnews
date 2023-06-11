@@ -14,3 +14,14 @@
     bottom: 0;
     left: 0;
   }
+
+ 
+  @media (max-width: 767px) {
+    #sr-res-root {
+      width: 150px;
+      font-size: '14px';
+      height: '35px';
+      justify-content: start;
+    }
+  }
+

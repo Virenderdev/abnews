@@ -695,5 +695,9 @@ const MenuItems = [
     },
   ];
   
-  export { MenuItems, Items };
+
+  const contactConfig ={
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, ab voluptas! Illum molestias alias consequuntur cupiditate praesentium enim error laborum inventore tenetur autem."
+  }
+  export { MenuItems, Items ,contactConfig};
   

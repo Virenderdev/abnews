@@ -1,9 +1,8 @@
 import "./Navbar.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
 
 const CustomNavbar = () => {
   const [click, setClick] = useState(false);
@@ -23,30 +22,37 @@ const CustomNavbar = () => {
 
   window.addEventListener("scroll", changeColor);
 
-  const scrollToAbout = () => {
-    scroll.scrollTo(500);
+  // const scrollToSection = (section) => {
+  //   scroll.scrollTo(section, {
+  //     duration: 500,
+  //     delay: 0,
+  //     smooth: "easeInOutQuart",
+  //   });
+  //   setClick(false);
+  // };
+  const scrollToSection = (section) => {
+    scroll.scrollTo(section, {
+      duration: 500,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
     setClick(false);
   };
-
-  const location = useLocation();
-  const firstRender = useRef(true);
-
+  
   useEffect(() => {
-    // Check if the user navigated from a different page
-    const { state } = location;
-    if (firstRender.current && state && state.from !== location.pathname) {
-      // Scroll to the menu section
-      const scrollOptions = {
-        duration: 500,
-        delay: 0,
-        smooth: "easeInOutQuart",
-      };
-      scroll.scrollTo('menu', scrollOptions);
+    const currentPathname = window.location.pathname;
+    const hash = window.location.hash;
 
-      // Set firstRender to false to prevent subsequent scrolls
-      firstRender.current = false;
+    if (hash === "#about" && currentPathname !== "/") {
+      setTimeout(() => {
+        scrollToSection("about");
+      }, 500);
+    } else if (hash === "#menu" && currentPathname !== "/") {
+      setTimeout(() => {
+        scrollToSection("menu");
+      }, 500);
     }
-  }, [location]);
+  }, []);
 
   return (
     <div className={color ? "header header-bg" : "header"}>
@@ -55,15 +61,15 @@ const CustomNavbar = () => {
           <Link to="/">HOME</Link>
         </li>
         <li>
-          <ScrollLink to="about" smooth={true} duration={500}>
-            ABOUT
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink to="menu" smooth={true} duration={500}>
-           MENU
-          </ScrollLink>
-        </li>
+  <ScrollLink to="about" smooth={true} duration={500} onClick={() => scrollToSection("about")}>
+    ABOUT
+  </ScrollLink>
+</li>
+<li>
+  <ScrollLink to="menu" smooth={true} duration={500} onClick={() => scrollToSection("menu")}>
+    MENU
+  </ScrollLink>
+</li>
         <li>
           <Link to="/whatson">WHAT'S ON</Link>
         </li>

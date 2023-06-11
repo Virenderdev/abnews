@@ -1,5 +1,5 @@
 // import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
-import {MdAdd, MdOutlineFavoriteBorder} from 'react-icons/md'
+import {MdAdd,MdFavorite} from 'react-icons/md'
 import React, { useState } from "react";
 import { actionType } from "./reducer";
 import { Items } from "./Data";
@@ -34,7 +34,7 @@ function ItemCard({ itemId, imgSrc, name, price, ratings }) {
         className={`isFavourite ${isFavourite ? "active" : ""}`}
         onClick={() => setFavourite(!isFavourite)}
       >
-        <MdOutlineFavoriteBorder />
+        <MdFavorite className='MuiSvgIcon-root'/>
       </div>
 
       <div className="imgBox">

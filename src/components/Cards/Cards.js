@@ -11,13 +11,18 @@ const CardData = () => {
 
      navigate("/dinnermenu")
     };
+
+    const handleBooking = () =>{
+      navigate('/booking')
+    }
     const cards = [
       {
         // image: jacs,
         title: 'EVENTS',
         description1: `Looking for a place to host after work drinks in Waterloo then we've got plenty of spaces areas for your drinks booking.`,
         description2:'Head to our events page to find out more about booking your spot in Southwark',
-        buttonText: 'BOOK NOW'
+        buttonText: 'BOOK NOW',
+        handleClick: handleBooking
       },
       {
         // image: jacs2,

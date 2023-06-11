@@ -13,14 +13,25 @@ import eventcard2 from "../../Images/eventcard2.webp"
 import eventcard3 from "../../Images/eventcard3.webp"
 
 import "./EventHire.css"
+import { useNavigate } from 'react-router-dom';
 const EventHire = () => {
   const rowRef = useRef(null);
+  const navigate = useNavigate()
   const handleScroll = () => {
     rowRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-
-  
+   const handleBooking = () => {
+        navigate('/booking')
+   }
+   const handleMail = () => {
+    const recipient = 'virender.digitalshakha@gmail.com';
+    const subject = 'Private Hire Inquiry';
+    const body = 'Hello, I would like to inquire about private hire.';
+    
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
   return (
     <>
     <CustomNavbar />
@@ -48,7 +59,7 @@ const EventHire = () => {
   <p className='text-white'>Scroll down to take a look at our spaces.</p>
   <div className="d-flex justify-content-center justify-content-around mt-5">
     <button className="white-button" onClick={handleScroll}>OUR SPACES</button>
-    <button className="white-button">BOOK NOW</button>
+    <button className="white-button" onClick={handleBooking}>BOOK NOW</button>
   </div>
 </Col>
 
@@ -112,10 +123,10 @@ const EventHire = () => {
    
    <Col md={6} className="mx-auto text-start my-5 d-flex align-items-center ">
   <div className="text-center justify-content-center">
-    <h1 className="text-white">Magnetic wall</h1>
+    <h1 className="text-white fw-bold ">Magnetic wall</h1>
     <p className="text-white mt-4  p-2">Whether it's your birthday, a leaving do, a hen do, or a work related event, we've got you covered! Jack's Bar has 2 magnetic walls (inside and outside). So make your day even more special by adding a message and personalising your event!</p>
     <div className="justify-content-center">
-      <button  className="mt-5 white-button">Email</button>
+      <button  className="mt-5 white-button" onClick={handleMail}>Email</button>
     </div>
   </div>
 </Col>

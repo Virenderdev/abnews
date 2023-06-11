@@ -56,7 +56,7 @@
     top: 1;
     left: -100%;
     z-index: -3;
-    transition: 0.3s;
+    transition: 0.2s;
   } 
   
     .nav-menu.active{

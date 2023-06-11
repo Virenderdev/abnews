@@ -22,7 +22,7 @@ const DeliveryHeader = () => {
 
     <div className="inputBox">
       <BsSearch className="searchIcon" />
-      <input type="text" placeholder="Search" />
+      <input type="text" placeholder="Search"  className='border-0'/>
     </div>
 
     <div className="shoppingCart">
