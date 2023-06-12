@@ -60,7 +60,7 @@ const Delivery = () => {
      <div className="leftMenu">
         <ul id="menu">
           {/* prettier-ignore */}
-          <MenuContainer link = {'#'} icon = {<AiFillHome/>}  isHome/>
+          <MenuContainer link = {'/'} icon = {<AiFillHome/>}  isHome/>
           {/* prettier-ignore */}
           <MenuContainer link = {'#'} icon = {<BsChatLeftQuoteFill/>}  />
           {/* prettier-ignore */}

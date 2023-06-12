@@ -27,7 +27,7 @@ const CardData = () => {
       {
         // image: jacs2,
         title: ' DELIVERY',
-        description1: 'Fancy a Thai dinner but cant make it to Jacks Bar, fear not.',
+        description1:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus tempora numquam facilis fugit ?",
         description2: `We've got he best Thai Menu in Waterloo and we can deliver right to your doorstep.`,
         buttonText: 'ORDER NOW',
         handleClick: handleOrderNow
