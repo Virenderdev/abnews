@@ -29,7 +29,7 @@ const ContactUs = () => {
   return (
     <>
         <CustomNavbar />
-      <div className="hero">
+      <div className="hero2">
  
     <div
       className="img-fluid"
@@ -45,7 +45,7 @@ const ContactUs = () => {
     > 
    <Container>
     <Row className='justify-content-center align-items-center'>
-      <Col md={5} className='content-main  '>
+      <Col md={5} className='content-main2  '>
         <h1 className='text-center text-white fw-bold'>AUTHENTIC THAI FOOD MADE IN INDIA</h1>
       </Col>
       <Col md={6} className='content-text'>

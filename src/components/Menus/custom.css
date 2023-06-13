@@ -97,7 +97,8 @@
       position: relative;
       top: auto;
       left: auto;
-      transform: none;
+      transform: none; 
+      margin-top: 0 !important;
     }
   
     .additional-image {
