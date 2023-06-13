@@ -9,6 +9,7 @@ import InlineError from './InlineError';
 import {validateEmail, validateFUllName, validateMessage} from "./Validation"
 import { contactConfig } from '../../components/Data';
 import axios from "axios";
+import {motion} from 'framer-motion'
 const ContactUs = () => {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
@@ -28,47 +29,39 @@ const ContactUs = () => {
   return (
     <>
         <CustomNavbar />
-<div className="hero">
-   
-   
+      <div className="hero">
+ 
+    <div
+      className="img-fluid"
+      style={{
+        backgroundImage: `url(${foodPic})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100%',
+        height: '100vh',
+       
     
-<div
-  className="img-fluid"
-  style={{
-    backgroundImage: `url(${foodPic})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    width: '100%',
-    height: '90vh',
-    position: 'relative', // Add relative positioning to the container
-  }}
->
-  <div
-    className="dark-overlay"
-    style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the opacity as needed
-    }}
-  ></div>
-   <Row >
-    <Col md={5} className='content-main' >
-      <h1 className='text-center text-white fw-bold'>AUTHENTIC THAI FOOD MADE IN INDIA</h1>
-    </Col>
-    <Col md={6}  className='content-text'>
-      <p >Our Thai Kitchen offers some of the best food in Waterloo.</p>
-      <p>For lunch, we serve a daily changing lunch menu with a selection of Thai dishes to choose from.</p>
-      <p>This can be enjoyed in the pubs with a cold beer or our Thai Shack at The Ring acts as the perfect place to drop in and grab a takeaway in Southwark.​</p>
-      <p>Our evening menu extends to more authentic Thai classics and a few of our hidden favourites to accompany them.</p>
-      <p>So if you are looking for a Thai dining experience in South London then head into one of our venues</p>
-    </Col>
-   </Row>
-    </div>
-  
+      }}
+    > 
+   <Container>
+    <Row className='justify-content-center align-items-center'>
+      <Col md={5} className='content-main  '>
+        <h1 className='text-center text-white fw-bold'>AUTHENTIC THAI FOOD MADE IN INDIA</h1>
+      </Col>
+      <Col md={6} className='content-text'>
+        <p>Our Thai Kitchen offers some of the best food in Waterloo.</p>
+        <p>For lunch, we serve a daily changing lunch menu with a selection of Thai dishes to choose from.</p>
+        <p>This can be enjoyed in the pubs with a cold beer or our Thai Shack at The Ring acts as the perfect place to drop in and grab a takeaway in Southwark.​</p>
+        <p>Our evening menu extends to more authentic Thai classics and a few of our hidden favourites to accompany them.</p>
+        <p>So if you are looking for a Thai dining experience in South London then head into one of our venues</p>
+      </Col>
+    </Row>
+    </Container>
   </div>
+</div>
+
+
+
 
  
       <Container>
@@ -96,12 +89,15 @@ const ContactUs = () => {
         <form  className='contact_form w-100' onSubmit={handleSubmit}>
           <Row>
             <Col lg={6} className='form-group'>
-            <input className='form-control rounded-0' type="text" id="name" placeholder='username' value={fullName} onChange={(e)=> setFullName(e.target.value)} autoComplete='off' required/>
+              <motion.div whileHover = {{scale:0.9}} whileTap={{scale:0.8}}>
+            <motion.input className='form-control rounded-0' type="text" id="name" placeholder='username' value={fullName} onChange={(e)=> setFullName(e.target.value)} autoComplete='off' required whileHover={{scale: 1.2}} transition= {{duration: 0.3}}  style={{ boxShadow: 'none' }}/>
                  {fullNameError && <InlineError error={fullNameError}/>}
+                 </motion.div>
             </Col >
             <Col lg={6} className="form-group">
-            <input className='form-control rounded-0' type="email" id="email" value={email}   onChange={(e)=>setEmail(e.target.value)}placeholder='example@gmail.com' autoComplete='off' required/>
-
+            <motion.div whileHover = {{scale:0.9}} whileTap={{scale:0.8}}>
+            <motion.input className='form-control rounded-0' type="email" id="email" value={email}   onChange={(e)=>setEmail(e.target.value)}placeholder='example@gmail.com' autoComplete='off' required whileHover={{scale:1.2}} transition={{duration: 0.3}}  style={{ boxShadow: 'none' }}/>
+             </motion.div>
             </Col>
           </Row>
            
@@ -109,16 +105,18 @@ const ContactUs = () => {
        
         
           
-          
-            <textarea className="form-control rounded-0" id="message" value={message} onChange={(e)=>setMessage(e.target.value)} autoComplete='off' required placeholder='message here...' rows={6}></textarea>
-         
+          <motion.div whileHover = {{scale:1.1}} whileTap={{scale:0.8}}>
+            <textarea className="form-control rounded-0" id="message" value={message} onChange={(e)=>setMessage(e.target.value)} autoComplete='off' required placeholder='message here...' rows={6}  style={{ boxShadow: 'none' }}></textarea>
+         </motion.div>
          <br/>
          <Row>
-          <Col lg={12} className='form-group'>
+          <Col lg={12} xs={12} className='form-group'>
             {isEmailSent ? (
               <p>Thank you for your message. We will get back to you soon.</p>
             ) : (
+              <motion.div whileHover={{scale:1.0}} whileTap={{scale:0.9}}>
           <button type="submit "  value="Send" className='text-center custom-button'>Submit</button>
+          </motion.div>
  ) }
           </Col>
          </Row>

@@ -79,9 +79,7 @@ const CustomNavbar = () => {
         <li>
           <Link to="/contact">CONTACT US</Link>
         </li>
-        <li>
-          <Link to="/delivery">DELIVERY</Link>
-        </li>
+       
       </ul>
       <div className="hamburger" onClick={handleClick}>
         {click ? (
