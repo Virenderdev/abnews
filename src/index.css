@@ -7,10 +7,6 @@
   margin: 0;
   padding: 0;
   font-family: "Railway" ,sans-serif;
-  
-  
-  
-  
 }
 html, body, #root {
   overflow-x: hidden;
@@ -27,3 +23,6 @@ ul{
   list-style-type: none;
 }
 
+hr{
+  border: 1px solid #000000 !important;
+}

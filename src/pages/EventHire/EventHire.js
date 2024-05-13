@@ -7,13 +7,19 @@ import event1 from "../../Images/eventpic1.webp";
 import event2 from "../../Images/eventpic2.webp";
 import event3 from "../../Images/eventpic3.webp";
 import event4 from "../../Images/eventpic4.webp";
-import magnetic from "../../Images/magneticwall.webp";
+import magnetic from "../../Images/magneticwall.jpg";
 import eventcard1 from "../../Images/eventcard1.webp"
 import eventcard2 from "../../Images/eventcard2.webp"
 import eventcard3 from "../../Images/eventcard3.webp"
+import { Link } from 'react-router-dom';
+import Login from '../Login';
+import Team from "../Team"
 
 import "./EventHire.css"
 import { useNavigate } from 'react-router-dom';
+import Register from '../Register';
+
+
 const EventHire = () => {
   const rowRef = useRef(null);
   const navigate = useNavigate()
@@ -32,129 +38,91 @@ const EventHire = () => {
     const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
   };
+
   return (
     <>
     <CustomNavbar />
     <div className="hero">
-    <div className='dark'
-    style={{
-      backgroundImage: `url(${eventheader})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      width: '100%',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-    
-    }}
-  ></div>
-    <div className='content'>
-  <Row>
-  <Col md={5} className="mx-auto text-center text-md-start">
-  <h2 className='text-white fw-bold text-center'>EVENTS & PRIVATE HIRE</h2>
-  <p className='text-white mt-4'>Looking for a bar to host your drinks in Waterloo or an area for an event in Southwark? We can help.</p>
-  <p className='text-white mt-3'>We’re pretty flexible here at Jacks, let us know what you are after, and we’ll make it happen. We’ve got a number of spaces to drink and dine, with some available to book for private hire.</p>
-  <p className='text-white'>Scroll down to take a look at our spaces.</p>
-  <div className="d-flex justify-content-center justify-content-around mt-5">
-    <button className="white-button" onClick={handleScroll}>OUR SPACES</button>
-    <button className="white-button" onClick={handleBooking}>BOOK NOW</button>
-  </div>
-</Col>
 
-</Row>
-</div>
-  </div>
-  <Row className='py-3' ref={rowRef}>
-  <Col md={3}>
-  <Card className="text-center">
-    <Card.Img variant="top" src={event1} alt="card1" className="img-fluid" />
     
-  </Card>
-</Col>
-    <Col md={3}>
-    <h2 className='text-center mt-5'>Outside</h2>
-    <p className='text-center px-4 mt-5'>Our outdoor area is the cosy spot for an event on Waterloo. We've got a full cover and plenty of heaters for when things get cold.</p>
-    </Col>
-    <Col md={3}>
-      <Card className='text-center'>
-    <Card.Img variant='top' src={event2} alt='card1'  className='img-fluid'/>
-    </Card>
-    </Col>
-    <Col md={3}>
-     
-    <h2 className='text-center mt-5'>Back Room</h2>
-    <p className='text-center px-4 mt-5'>Located towards to back of the bar, our back room offers a great setting for hosting events. The semi private space pays homage to the McElhinney family.</p>
-    </Col>
-    <Col md={3}>
-    <h2 className='text-center mt-5'>Bar Area</h2>
-    <p className='text-center px-4 mt-5'>We've got a number of standing and seated spaces nestled in our Southwark Bar.</p>
-    </Col>
-    <Col md={3}>
-    <Card className='text-center'>
-    <Card.Img variant='top' src={event3} alt='card1' className='img-fluid'/>
-    </Card>
-    </Col>
-    <Col md={3}>
-    <h2 className='text-center mt-5'>Dining</h2>
-    <p className='text-center px-4 mt-5'>Offering a tasty Thai menu we have dedicated spaces for both dinner and lunch in Waterloo.</p>
-    </Col>
-    <Col md={3}>
-      <Card className='text-center'>
-    <img variant ='top' src={event4} alt='card1' className='img-fluid'/>
-    </Card>
-    </Col>
-  </Row>
-  <div
-    style={{
-      backgroundImage: `url(${magnetic})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      width: '100%',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'start',
-      justifyContent: 'start',
+    <div className='content' >
+    <hr/>
     
-    }}
-  >
+  <Col md={5} className="text-md-start">
+ 
+  <h2 className='fw-bold text-start career mb-3'>Careers</h2>
    
-   <Col md={6} className="mx-auto text-start my-5 d-flex align-items-center ">
-  <div className="text-center justify-content-center">
-    <h1 className="text-white fw-bold ">Magnetic wall</h1>
-    <p className="text-white mt-4  p-2">Whether it's your birthday, a leaving do, a hen do, or a work related event, we've got you covered! Jack's Bar has 2 magnetic walls (inside and outside). So make your day even more special by adding a message and personalising your event!</p>
-    <div className="justify-content-center">
-      <button  className="mt-5 white-button" onClick={handleMail}>Email</button>
+  </Col>
+ 
+</div> 
+</div>
+<div className='container'>
+  <Row className="mt-5">
+    <div class='col-md-9'>
+    <p className='career-sub-heading'>Independent, deeply reported journalism is the fuel that powers a healthy and engaged society. We are covering the most important topics of our time and telling stories that would otherwise go untold.</p>
     </div>
+  </Row>
   </div>
-</Col>
-
-     
+  <hr/>
   
-  </div>
-  {/* import { Container, Row, Col, Card } from 'react-bootstrap'; */}
+  <div
+  style={{
+    backgroundImage: `url(${magnetic})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    width: '100%',
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'start',
+    justifyContent: 'start',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)' // Adjust the opacity value (0.8) to make it darker or lighter
+  }}
+>   
+  <Col md={6} className="mx-auto text-start my-5 d-flex align-items-center">
+    <div className="text-center justify-content-center">
+      <h1 className="text-white fw-bold ">Magnetic wall</h1>
+      <p className="text-white mt-4 p-2 fs-4">
+  Are you passionate about making a difference? Seize the opportunity to be a catalyst for change in the world of journalism. Register now to embark on a journey where your voice matters, your stories resonate, and your impact is felt. Together, let's shape the future of media and inspire generations to come.
+</p>
+
+<div className="d-flex justify-content-around">
+  <Link to="../register"><button className="mt-5 mr-2 white-button hover-border">Register As a Team</button></Link>
+  <Link to="../login"><button className="mt-5 ml-2 white-button">Login As Team</button></Link>
+  {/* <Link to="/login" className="mt-5 ml-2 white-button">Login As Team</Link> */}
+</div>
+
+    </div>
+  </Col>
+</div>
+
+  
+  
+ 
 
 
 <Container className='py-3'>
   <Row>
     <Col md={4}>
       <Card>
-        <Card.Img src={eventcard1} alt="" />
+        <Card.Img src="https://extension.harvard.edu/wp-content/uploads/sites/8/2020/10/masters-in-journalism.jpg" alt="" />
       </Card>
+      <h3 class="mt-3">Journalism</h3>
     </Col>
     <Col md={4}>
       <Card>
-        <Card.Img src={eventcard2} alt="" />
+        <Card.Img src="https://t3.ftcdn.net/jpg/06/25/63/74/360_F_625637450_W3MtE1aupAvtkHBStIqpZEGHfS1y1jmv.jpg" alt="" />
       </Card>
+      <h3 class="mt-3">Our People</h3>
     </Col>
     <Col md={4}>
       <Card>
-        <Card.Img src={eventcard3} alt="" />
+        <Card.Img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg" alt="" />
       </Card>
+      <h3 class="mt-3">Company</h3>
     </Col>
   </Row>
+  <Team/>
 </Container>
 
   <Footer/>

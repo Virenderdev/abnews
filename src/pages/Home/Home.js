@@ -5,6 +5,7 @@ import HeroImg from '../../components/HeroImg';
 import About from '../About/About';
 import Menu from '../Menu/Menu';
 import Footer from '../../components/Footer/Footer';
+// import Login from '../Login';
 // import Carousele from '../../components/Carousele';
 
 const Home = () => {

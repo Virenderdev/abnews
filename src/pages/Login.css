@@ -1,0 +1,102 @@
+/* Login.css */
+
+/* Container styles */
+.L-Container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Background color for the container */
+}
+
+/* Form styles */
+.Form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out, slideUp 0.8s ease-in-out; /* Add fadeIn and slideUp animations */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Title styles */
+h2 {
+    /* color: #ff6b6b;  */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Input styles */
+input {
+    background-color: #f5f5f5; /* Input background color */
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    color: #333; /* Input text color */
+    transition: background-color 0.3s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    background-color: #fff; /* Input background color on focus */
+}
+
+/* Button styles */
+input[type="submit"] {
+    background-color: #ffa34d; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff7e00; /* Button background color on hover */
+}
+
+/* Subtext styles */
+.subtext {
+    color: #666; /* Subtext color */
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.subtext a {
+    color: #ff6b6b; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.subtext a:hover {
+    color: #ff4040; /* Link color on hover */
+}

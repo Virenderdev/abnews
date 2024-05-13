@@ -8,15 +8,14 @@ const About = () => {
         <Row>
         <Col md={12} className='mt-5 mb-5'id="about">
               <p className='mt-5 fs-5'>
-                If you fancy stopping by, propping up the bar and having a drink in Waterloo, then Jacks is the place to be!
-                If you’re looking for a spot for after-work beers in Southwark then be sure to drop in. Located near the Southbank we have an extensive wine list and authentic Thai menu to match. Our offer extends beyond the pub with takeaway and delivery on our food menu.
-              </p>
+              If you're seeking the latest news and updates from across the Akhand Bharat region, look no further than Akhand Bharat Daily News! Our platform offers comprehensive coverage of national events, regional developments, and local stories, keeping you informed and engaged with the pulse of our great nation.
+                </p>
             </Col>
           <Col>
         
-            <h6 className='text-center fw-bold'>OUR STORY</h6>
-            <p className='mt-4 fs-5'>Jack’s Bar and Kitchen is the brainchild of Ryan and John McElhinney. We are located at 96 Isabella Street (behind Southwark Tube) SE1 8DD. The original Jack’s was opened in Ireland in 1970 by their father Jack so the boys decided to pay tribute to their father by re-opening the original almost forty years on. Jack's is a bar for birthdays, catching up with friends, lunch on our patio in our winter garden, craft beer, cocktails and delicious Thai food.</p>
-            <p className='mt-5 fs-5 mb-5'>We cater for many events including wedding receptions so enquire nowemailing jacksbookings@windmilltaverns.com</p>
+            <h6 className='text-center fw-bold'>OUR JOURNEY</h6>
+            <p className='mt-4 fs-5'>Akhand Bharat Daily News is dedicated to providing accurate and reliable news coverage, rooted in journalistic integrity and ethical reporting practices. Founded by visionary leaders with a passion for serving the people of Akhand Bharat, our platform strives to uphold the principles of democracy, freedom of expression, and social justice.</p>
+            <p className='mt-5 fs-5 mb-5'>Join us on this journey as we navigate the ever-changing landscape of Akhand Bharat, together shaping the future of our nation. For news tips, inquiries, or advertising opportunities, reach out to us at info@akhandbharat.com</p>
           </Col>
         </Row>
       </Container>

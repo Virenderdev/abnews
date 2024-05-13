@@ -1,3 +1,30 @@
+.right_conatct_social_icon {
+  position: fixed;
+  top: 50%;
+  right: 0;
+    transform: translateY(-50%);
+  z-index: 999;
+}
+
+.right_conatct_social_icon .socil_item_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.right_conatct_social_icon .socil_item_inner li a {
+  color: blue;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+/* Adjust spacing between social icons */
+.right_conatct_social_icon .socil_item_inner li {
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+
+
 @media screen and (max-width: 786px) {
     .jacsimage {
       width: 100%;

@@ -1,0 +1,45 @@
+/* Team.css */
+
+/* Add animation to the table rows */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .table-row-fade-in {
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Add some styles to the select dropdown */
+  select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  select:hover,
+  select:focus {
+    border-color: #007bff;
+  }
+  
+  /* Add styles to the loading indicator */
+  .loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-text {
+    font-size: 18px;
+    color: #007bff;
+    margin-left: 8px;
+    animation: spin 1s linear infinite; /* Add a spin animation */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

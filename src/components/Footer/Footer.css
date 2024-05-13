@@ -1,5 +1,7 @@
-a {
-    color: black;
+
+
+.footer >a {
+    color: #fff !important;
     text-decoration: none;
   }
   @media screen and (max-width: 768px) {
@@ -10,5 +12,6 @@ a {
       text-align: left;
     }
   }
+
   
   

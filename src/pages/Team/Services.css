@@ -1,0 +1,96 @@
+/* ManageProducts.css */
+
+.s-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-search label {
+    margin-right: 10px;
+  }
+  
+  .filter-search input[type="text"],
+  .filter-search select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .filter-search button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-search button:hover {
+    background-color: #0056b3;
+  }
+  
+  .products-services {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  .new-product-form h2,
+  .existing-products h2 {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .input-group input[type="text"],
+  .input-group textarea,
+  .input-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .input-group textarea {
+    resize: vertical;
+  }
+  
+  .existing-products .product {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .existing-products .product button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .existing-products .product button:hover {
+    background-color: #0056b3;
+  }
+  

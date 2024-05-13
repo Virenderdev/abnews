@@ -10,6 +10,9 @@ import {validateEmail, validateFUllName, validateMessage} from "./Validation"
 import { contactConfig } from '../../components/Data';
 import axios from "axios";
 import {motion} from 'framer-motion'
+import Contact from "../../Images/Contact.png"
+
+
 const ContactUs = () => {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
@@ -34,7 +37,7 @@ const ContactUs = () => {
     <div
       className="img-fluid"
       style={{
-        backgroundImage: `url(${foodPic})`,
+        backgroundImage: `url('https://www.mondialcare.eu/wp-content/uploads/2022/10/travel-insurance-mondialcare-contact-us-cover.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
@@ -43,12 +46,12 @@ const ContactUs = () => {
     
       }}
     > 
-   <Container>
+   {/* <Container>
     <Row className='justify-content-center align-items-center'>
       <Col md={5} className='content-main2  '>
-        <h1 className='text-center text-white fw-bold'>AUTHENTIC THAI FOOD MADE IN INDIA</h1>
+        <h1 className='text-center text-black fw-bold'> Akhand Bharat News</h1>
       </Col>
-      <Col md={6} className='content-text'>
+      <Col md={6} className='content-text-black'>
         <p>Our Thai Kitchen offers some of the best food in Waterloo.</p>
         <p>For lunch, we serve a daily changing lunch menu with a selection of Thai dishes to choose from.</p>
         <p>This can be enjoyed in the pubs with a cold beer or our Thai Shack at The Ring acts as the perfect place to drop in and grab a takeaway in Southwark.​</p>
@@ -56,7 +59,7 @@ const ContactUs = () => {
         <p>So if you are looking for a Thai dining experience in South London then head into one of our venues</p>
       </Col>
     </Row>
-    </Container>
+    </Container> */}
   </div>
 </div>
 
@@ -74,11 +77,11 @@ const ContactUs = () => {
   <Col lg={5} className='mb-5'>
     <h3 className='color_sec py-4'>Get in Touch</h3>
     <address>
-      <strong>Email: jacksfood@gmail.com</strong>
+      <strong>Email: info@akhandbharat.com</strong>
       <br/>
       <br/>
       <p>
-        <strong>Phone: +62 *** ***</strong>
+        <strong>Phone: +91 990-9441-697</strong>
       </p>
     </address>
     <p>{contactConfig.description}</p>

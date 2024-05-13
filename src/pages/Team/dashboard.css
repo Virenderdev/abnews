@@ -1,0 +1,101 @@
+/* Home.css */
+
+.d-container {
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  
+  .profile-details {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .profile-details h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .edit-profile {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .product-overview {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .product-overview h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .product-option {
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .tell-us {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+  }
+  
+  .tell-us h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .tell-us input[type="text"],
+  .tell-us textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .tell-us textarea {
+    height: 150px;
+  }
+  
+  .tell-us button {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tell-us button:hover {
+    background-color: #0056b3;
+  }
+  

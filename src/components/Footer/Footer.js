@@ -2,53 +2,63 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import "./Footer.css";
 import { useLocation } from 'react-router-dom';
+import Logo from "../../Images/logo.png";
+import HeroImg from '../HeroImg';
+import { motion } from "framer-motion";
+
 const Footer = () => {
   const location = useLocation().pathname;
 
   return (
 
-        <section className='footer'>
-            <Container className='text-md-start mt-5'>
-                <Row>
-                    <Col md={3}>
-                    <h2 className='fs-3'>LOCATIONS</h2>
-                    <p className='mb-1'>JACKS BAR</p>
-                    <p className='mb-1'>MC & SONS</p>
-                    <p className='mb-1'>THE RING</p>
-                    <p>THE KINGS ARMS</p>
-                  
-                    </Col>
-                    <Col md={3}>
-                    <h2 className='fs-3'>OPENING TIMES</h2>
-                    <p className='mb-0'>MON - WED: 11:30AM - 11PM</p>
-                    <p className='mb-0'>THU: 11:30AM - 11:30PM</p>
-                    <p className='mb-0'>FRI: 11:30AM - 12AM</p>
-                    <p className='mb-0'>SAT: 4PM - 12AM</p>
-                    <p>SUN: CLOSED</p>
-
-                    </Col>
-                    <Col>
-                    <h2 className='fs-3'>CONTACT</h2>
-                    <p className='mb-0'>96 ISABELLA STREET, LONDON SE1 8DD</p>
-                    <p className='mb-0'>TEL: 020 7928 0678</p>
-                    <p className='mb-0'>EMAIL: JACKS@WINDMILLTAVERNS.COM</p>
-          
-                    </Col>
-                </Row>
-                <hr/>
-                {location !== "/delivery" && (
+    <motion.section
+    className='footer'
+    initial={{ opacity: 0 }} // Initial animation state
+    animate={{ opacity: 3 }} // Final animation state
+    transition={{ duration: 2 }} // Transition duration
+  >
+    <Container className='mt-5'>
+      <Row>
+        <Col md={3}>  
+          <img src={Logo} alt='Logo' style={{ width: "140px" }} />
+        </Col>
+        <Col md={3}>
+          <h4 className='fs-3 text-black'>Company</h4>
+          <p className='mb-1 text-black'>People</p>
+          <p className='mb-1 text-black'>Diversity</p>
+          <p className='mb-1 text-black'>History</p>
+          <p className="text-black">Awards and Recognition</p>
+        </Col>
+ 
+        <Col md={3}>
+          <h4 className='fs-3 text-black'>Careers</h4>
+          <p className='mb-0 text-black'>Newsroom</p>
+          <p className='mb-0 text-black'>Technology</p>
+          <p className='mb-0 text-black'>Product and Design</p>
+          <p className='mb-0 text-black'>Marketing</p>
+          <p className='text-black'>Journalism</p>
+        </Col>
+        <Col md={3}>
+          <h4 className='fs-3 text-black'>Privacy Policy</h4>
+          <p className='mb-0 text-black'>Terms of Service</p>
+          <p className='mb-0 text-black'>Contact</p>
+          <p className='mb-0 text-black'>EMAIL: info@akhandbharat.com</p>
+        </Col>
+      </Row>
+      <hr />
+      {/* Location check is commented out for now */}
+      {location !== "/delivery" && (
         <Row>
           <Col>
             <h3 className='text-center'>
               Copyrights reserved by 2023 @
-              <a href="https://www.digitalshakha.in/" className="footer-links" target="_blank">digitalshakha</a>
+              <a href="/" className="footer-links text-black" target="_blank">Akhand Bharat</a>
             </h3>
           </Col>
         </Row>
       )}
-
-            </Container>
-        </section>
+    </Container>
+  </motion.section>
       
     
   )

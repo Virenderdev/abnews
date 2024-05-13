@@ -9,18 +9,47 @@ import jacksImage from '../Images/Jacks_white_logo.webp';
 import deliveryIcon from "../Images/deliveroo-logo-brand-food-deliver.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangle } from '@fortawesome/free-regular-svg-icons';
+import { motion } from "framer-motion";
+
 
 import "./HeroImgStyles.css"
+// import FlipBook from './FlipBook';
 const HeroImg = () => {
   const navigate = useNavigate()
   const handleBooking =()=>{
     navigate('/booking')
   }
+
+  const buttonVariants = {
+    initial: {
+      scale: 1,
+      boxShadow: '0px 0px 0px rgba(0,0,0,0.0)',
+      backgroundColor: '#f97300',
+      color: '#fff',
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut',
+      },
+    },
+    hover: {
+      scale: 1.1,
+      boxShadow: '0px 0px 20px rgba(0,0,0,0.2)',
+      backgroundColor: '#ffad00', // Change to a lighter shade
+      color: '#000', // Change text color to black
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut',
+      },
+    },
+    tap: {
+      scale: 0.9,
+    },
+  };
   return (
     <div
       className="hero"
       style={{
-        backgroundImage: `url(${Homeheader})`,
+        // backgroundImage: `url(${Homeheader})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
@@ -29,12 +58,13 @@ const HeroImg = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        // margintop: '100px',
       }}
     >
       <Container>
         <Row>
         <Col md={3} className="d-flex justify-content-center ms-2">
-  <div
+  {/* <div
     id="sr-res-root"
     className="sr-lg sr-light sr-#41414a"
     style={{
@@ -71,29 +101,68 @@ const HeroImg = () => {
       }}
     ></span>
     <span>BOOK NOW</span>
-  </div>
+  </div> */}
 </Col>
 
 
           </Row>
           <Row>
-          <Col md={12} className="d-flex justify-content-center mb-5">
-            <img src={jacksImage} alt="jacsImage"  className='jacsimage'/>
-          </Col>
-        </Row>
-        <Row>
-        <Col md={12} className="d-flex icons " >
-  <div className="d-flex align-items-end justify-content-center" style={{ flex: 1 }}>
-  <Link to="https://www.facebook.com/" target='_blank'><BsFacebook style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} /></Link>
-  <Link to="https://twitter.com/" target='_blank'> <AiFillTwitterCircle style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} /></Link>
-  <Link to='https://www.linkedin.com/feed/' target='_blank'><RiInstagramFill style={{ color: '#fff', width: '40px', height: '40px', margin: '0 5px' }} /></Link>
-  </div>
-  <div className="">
-    <img src={deliveryIcon} alt="deliveryIcon" style={{ width: "6rem", height: "6rem" }} className='delivery-icon' />
-  </div>
-</Col>
+    <Col md={12} className="d-flex justify-content-center mb-5">
+        <div style={{ display: 'flex', alignItems: 'center',marginTop:'120px' }}>
+            {/* <img src="" alt="" className="jacsimage" style={{ height: '150px', width: '200px', marginRight: '20px' }} /> */}
+            <div>
+                <Link to='./FlipBook'>
+                <motion.button
+      style={{
+        height: '70px',
+        width: '180px',
+        borderRadius: '30px',
+        fontSize: '18px',
+        border: 'none',
+        outline: 'none',
+        cursor: 'pointer',
+      }}
+      variants={buttonVariants}
+      initial="initial"
+      whileHover="hover"
+      whileTap="tap"
+    >
+      Read News
+    </motion.button>
+                </Link>
+            </div>
+        </div>
+    </Col>
+</Row>
 
-        </Row>
+<Row>
+  <Col md={12} className="right_conatct_social_icon">
+    <motion.div
+      className="socil_item_inner"
+      initial={{ opacity: 0, y: 20 }} // Initial animation state
+      animate={{ opacity: 1, y: 0 }} // Final animation state
+      transition={{ duration: 1 }} // Transition duration
+    >
+      <ul>
+        <li>
+          <Link to="https://www.facebook.com/" target='_blank'>
+            <BsFacebook style={{ color: '#0866ff', width: '40px', height: '40px', margin: '0 5px',marginLeft: "98rem" }} />
+          </Link>
+        </li>
+        <li>
+          <Link to="https://twitter.com/" target='_blank'>
+            <AiFillTwitterCircle style={{ color: 'lightblue', width: '40px', height: '40px', margin: '0 5px',marginLeft: "98rem" }} />
+          </Link>
+        </li>
+        <li>
+          <Link to='https://www.linkedin.com/feed/' target='_blank'>
+            <RiInstagramFill style={{ color: 'red', width: '40px', height: '40px', margin: '0 5px',marginLeft: "98rem" }} />
+          </Link>
+        </li>
+      </ul>
+    </motion.div>
+  </Col>
+</Row>
       
       </Container>
     </div>

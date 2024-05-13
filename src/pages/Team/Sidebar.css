@@ -1,0 +1,57 @@
+.Dashboard {
+    display: flex;
+    
+  }
+  
+  .sidebar {
+    background-color: #C8C8C8;
+    /* background: linear-gradient(to right, #000 50%, #FFA500 50%); */
+    /* background: linear-gradient(to right, #000 60%, #FFA500 90%, #FFA500 100%); */
+    /* background: linear-gradient(to right, #000 60%, #FF8C00 80%, #FFA500 100%); */
+    color: #fff;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* padding: 20px; */
+    overflow-y: auto;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 80px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 50px; /* Adjust the margin-bottom here */
+  }
+  
+  .sidebar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar nav ul li a:hover {
+    color: #049cfa;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+  }
+  
